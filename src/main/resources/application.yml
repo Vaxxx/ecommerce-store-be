@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost;databaseName=ecommerce;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: vakporize
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+  #SMTP Configuration
+  mail:
+    host: localhost
+    port: 25
+  #    username:
+  #    password:
+  #  properties:
+  #    mail:
+  #      smtp:
+  #        auth: true
+  #        starttls:
+  #          enable: true
+#to add salt integer to perform encryption
+encryption:
+  salt:
+    rounds: 10
+
+#to produce a token
+jwt:
+  algorithm:
+    key: SuperSecureSecretKey
+  issuer: ecommerceStore
+  expiryInSeconds: 604800
+
+#for email
+email:
+  from: no-reply@ecommercestore.com
+
+#website configuration
+app:
+  frontend:
+    url: http://ecommercestore.com/
+
+
+
